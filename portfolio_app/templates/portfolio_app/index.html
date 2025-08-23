@@ -740,16 +740,7 @@ nav ul li a:hover::after{
         </div>
         <div class="contact-right">
         
-            <!-- <form id="contactForm" method="POST" action="">
-                
-               
-                  <input type="text" name="name" id="name" placeholder="your name" required>
-                <input type="email" name="email" id="email" placeholder="your email" required>
-                <textarea name="message" id="message" placeholder="your message" required></textarea>  
-                
-               
-                <button type="submit" class="btn btn2">submit</button>
-            </form> -->
+            
               <form   method="POST" action="">
                 {% csrf_token %}
                 {{ form.as_p }}
