@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 services:
   - type: web
     name: portfolio-website
@@ -18,24 +18,4 @@ services:
         value: "your_email@gmail.com"
       - key: EMAIL_HOST_PASSWORD
         value: "your_email_password"
-=======
-services:
-  - type: web
-    name: portfolio-website
-    env: python
-    region: oregon  # choose your preferred region
-    plan: free      # free plan
-    buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn portfolio_project.wsgi:application
-    autoDeploy: true
-    envVars:
-      - key: DEBUG
-        value: "False"
-      - key: SECRET_KEY
-        fromDatabase: false
-        value: "your-django-secret-key"
-      - key: EMAIL_HOST_USER
-        value: "your_email@gmail.com"
-      - key: EMAIL_HOST_PASSWORD
-        value: "your_email_password"
->>>>>>> 9283bda8974f6b64c7b05e78e21b2fca59cb27fe
+
