@@ -64,30 +64,7 @@ nav ul li a::after{
 nav ul li a:hover::after{
     width:100%;
 }
-/* .header{
-     padding-top: 100px; 
-    padding-bottom: 40px;
-    background-color: #080808;
-}
 
-.header-text {
-    margin: 0 auto;
-    max-width: 1000px;
-    padding: 20px;
-    font-size: 30px;
-    color: white;
-    text-align: left;
-}
-
-
-.header-text h1{
-    font-size: 40px;
-    
-}
-.header-text h1 span{
-    color: #ff004f;
-}  */
-  /* Base Styles */
 .header {
     padding-top: 100px; /* Space for fixed navbar */
     padding-bottom: 40px;
@@ -654,63 +631,63 @@ nav ul li a:hover::after{
     </div>
 </section>
 
-{% load static %}
+
 
 <section id="projects" class="project-section">
   <h2 class="sub-title">My Projects</h2>
   <div class="project-container">
 
     <div class="project-box">
-      <img src="{% static 'portfolio_app/images/screenshot4.png' %}" class="project-image">
+      <img src="{% static 'portfolio_app/images/foodie.png' %}" class="project-image">
       <h3>Frontend Food Order Website</h3>
       <p>Made using HTML, CSS, Bootstrap, JavaScript.</p>
       <a href="https://muppudathiganesh.github.io/foodie/food%20layout/navbar.html" target="_blank">View Project</a>
     </div>
 
     <div class="project-box">
-      <img src="{% static 'portfolio_app/images/screenshot6.png' %}" class="project-image">
+      <img src="{% static 'portfolio_app/images/wedding.png' %}" class="project-image">
       <h3>Digital wedding card</h3>
       <p>Website with HTML, CSS, Bootstrap, Python, Flask and SQLite backend project.</p>
       <a href="https://weddcard-1.onrender.com/" target="_blank">View Project</a>
     </div>
 
     <div class="project-box">
-      <img src="{% static 'portfolio_app/images/screenshot5.png' %}" class="project-image">
+      <img src="{% static 'portfolio_app/images/pet.png' %}" class="project-image">
       <h3>Pet Adoption</h3>
       <p>Adoption platform using HTML, CSS, and JavaScript.</p>
       <a href="https://muppudathiganesh.github.io/petweb/pets.html" target="_blank">View Project</a>
     </div>
 
     <div class="project-box">
-      <img src="{% static 'portfolio_app/images/screenshot3.png' %}" class="project-image">
+      <img src="{% static 'portfolio_app/images/door.png' %}" class="project-image">
       <h3>Groceries at Door Step</h3>
       <p>Built with HTML, JavaScript, local storage & SQL.</p>
       <a href="https://muppudathiganesh.github.io/zeptostep/index.html" target="_blank">View Project</a>
     </div>
 
     <div class="project-box">
-      <img src="{% static 'portfolio_app/images/screenshot8.png' %}" class="project-image">
+      <img src="{% static 'portfolio_app/images/kitchen.png' %}" class="project-image">
       <h3>Online kitchen</h3>
       <p>Built with HTML, CSS, JS, Flask, and SQLite backend.</p>
       <a href="https://online-kitchen-60nb.onrender.com/" target="_blank">View Project</a>
     </div>
 
     <div class="project-box">
-      <img src="{% static 'portfolio_app/images/screenshot7.png' %}" class="project-image">
+      <img src="{% static 'portfolio_app/images/service.png' %}" class="project-image">
       <h3>Service webpage</h3>
       <p>Built with HTML, CSS, and JavaScript.</p>
       <a href="https://muppudathiganesh.github.io/mechanicalwork/electromehanical/about.html" target="_blank">View Project</a>
     </div>
 
     <div class="project-box">
-      <img src="{% static 'portfolio_app/images/screenshot2.png' %}" class="project-image">
+      <img src="{% static 'portfolio_app/images/medical.png' %}" class="project-image">
       <h3>Medical billing</h3>
       <p>Built with HTML, CSS, and JavaScript.</p>
       <a href="https://muppudathiganesh.github.io/medicalbill/medical%20billing/login.html" target="_blank">View Project</a>
     </div>
 
     <div class="project-box">
-      <img src="{% static 'portfolio_app/images/screenshot1.png' %}" class="project-image">
+      <img src="{% static 'portfolio_app/images/employee.png' %}" class="project-image">
       <h3>Employees Payslip</h3>
       <p>Web app using HTML, JavaScript, Python, SQL.</p>
       <a href="https://muppudathiganesh.github.io/employeepayslip/employee%20payslip/index.html" target="_blank">View Project</a>
@@ -752,7 +729,7 @@ nav ul li a:hover::after{
         </div>
     </div>
 </div>
-
+{% endblock %}
  {% block js_css %}
 <script>
     var tablinks = document.getElementsByClassName("tab-links");
