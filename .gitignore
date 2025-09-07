@@ -1,12 +1,11 @@
+
 # Python bytecode
 __pycache__/
 *.py[cod]
 
-# Django static files
+# Django static files except images you want
 staticfiles/
-
-# Media uploads (if any)
-media/
+portfolio_app/static/portfolio_app/files/
 
 # Local environment files
 .env
@@ -14,17 +13,12 @@ media/
 # VSCode settings (optional)
 .vscode/
 
-# Database files (if any SQLite)
+# Database files
 db.sqlite3
 
 # System files
 .DS_Store
 Thumbs.db
-
-# Image files you don't want in git
-*.png
-*.jpg
-*.jpeg
 
 # Unwanted submodule folder
 R_muppudathi/
