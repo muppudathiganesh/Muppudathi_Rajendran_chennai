@@ -167,10 +167,10 @@ nav ul li a:hover::after{
 .about-col-1{
     flex-basis: 35%;
 }
-.about-col-1 img{
+/* .about-col-1 img{
     width:300px;
     border-radius: 15px;
-}
+} */
 .about-col-2{
     flex-basis: 60%;
 }
@@ -536,6 +536,161 @@ nav ul li a:hover::after{
   margin-bottom: 15px;
 }
 
+.profile-img {
+    width: 280px;             /* Adjust size */
+    height: 350px;            /* Adjust size */
+    object-fit: cover;
+    border-radius: 50% / 40%; /* Oval shape */
+    /* border: 4px solid #fff;    */
+    box-shadow: 0 0 25px #ff004f; /* Glow effect */
+    /* padding: 5px; */
+    /* background: #000;         */
+}
+/* Mobile screens */
+@media (max-width: 576px) {
+    .profile-img {
+        width: 160px;
+        height: 200px;
+    }
+}
+
+.skills-section {
+  padding: 60px 20px;
+  text-align: center;
+  color:#ff004f;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+
+/* Container for both cards */
+.skills-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* Each category card */
+.skills-card {
+  background: #0f172a;
+  padding: 30px;
+  border-radius: 20px;
+  width: 380px;
+  box-shadow: 0 10px 25px #e55c87;
+}
+
+.skills-card h3 {
+  color:white;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+/* Carousel */
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Each skill box */
+.skill {
+  min-width: 120px;
+  margin: 10px;
+  padding: 12px 18px;
+  background: #1e293b;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  color:white;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.skill:hover {
+  background: #ff004f;
+  color: black;
+}
+
+/* Arrows */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background:#ff004f;
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.carousel-btn.prev { left: 5px; }
+.carousel-btn.next { right: 5px; }
+
+/* ========================= */
+/* 📱 Mobile First (Default) */
+/* ========================= */
+.skills-container {
+  flex-direction: column;   /* Stack cards on top of each other */
+  align-items: center;
+}
+
+.skills-card {
+  width: 100%;
+  max-width: 320px;  /* limit width on small screens */
+  margin-bottom: 20px;
+}
+
+.skill {
+  min-width: 90px;   /* smaller skill boxes */
+  font-size: 0.8rem;
+}
+
+/* ========================= */
+/* 📲 Tablets (min-width: 600px) */
+/* ========================= */
+@media (min-width: 600px) {
+  .skills-container {
+    flex-direction: row; /* side by side */
+    justify-content: center;
+  }
+
+  .skills-card {
+    width: 45%;   /* 2 cards fit side by side */
+  }
+
+  .skill {
+    min-width: 100px;
+    font-size: 0.9rem;
+  }
+}
+
+/* ========================= */
+/* 💻 Desktops (min-width: 1024px) */
+/* ========================= */
+@media (min-width: 1024px) {
+  .skills-card {
+    width: 380px;  /* original wide layout */
+  }
+
+  .skill {
+    min-width: 120px;
+    font-size: 1rem;
+  }
+}
+
+
+
 </style>
 {% endblock %}
 {% block content %}
@@ -543,7 +698,7 @@ nav ul li a:hover::after{
 <div class="header">
     <div class="header-text">
         <p id="animated-title"> Full Stack Developer</p>
-        <h1>hi, i'm <span id="animated-name">Muppudathi</span><br>Rajendran from Chennai.</h1>
+        <h1>Hi, i'm <span id="animated-name">Muppudathi</span><br>Rajendran from Chennai.</h1>
         <h4> <span id="animated-skills" style="color: #ff004f;">
           Html|Css|JavaScript|<br>ReactJs|Python|Django|<br>Flask|MYSQL|Github </span>
         </h4>
@@ -554,7 +709,7 @@ nav ul li a:hover::after{
     <div class="container">
         <div class="row">
             <div class="about-col-1">
-                <img src="{% static 'portfolio_app/images/WhatsApp Image 2025-08-22 at 08.17.23_19f01c4b.jpg' %}">
+                <img  class="profile-img"  src="{% static 'portfolio_app/images/WhatsApp Image 2025-08-22 at 08.17.23_aeab944a.jpg' %}">
             </div>
             <div class="about-col-2">
                 <h1 class="sub-title">About Me</h1><br>
@@ -597,28 +752,62 @@ nav ul li a:hover::after{
     </div>
 </div>
 
-<section>
-    <div id="box">
-        <div class="box1">
-            <h1>Frontend</h1>
-            <ul>
-                <li><i class='bx bxl-html5' style='color:#2538c4'></i>Html</li>
-                <li><i class='bx bxl-css3' style='color:#ddce43'></i>Css</li>
-                <li><i class='bx bxl-javascript' style='color:#d76310'></i>Javascript</li>
-                <li><i class='bx bxl-react' style='color:#1609aa'></i>Reactjs</li>
-            </ul>
+
+
+
+<section id="skills" class="skills-section">
+  <h2 class="section-title">My Skills</h2>
+
+  <div class="skills-container">
+
+    <!-- Frontend -->
+    <div class="skills-card">
+      <h3>Frontend Development</h3>
+
+      <div class="carousel-container">
+        <button class="carousel-btn prev">&#10094;</button>
+
+        <div class="carousel-track">
+          <div class="skill">HTML</div>
+          <div class="skill">CSS</div>
+          <div class="skill">JavaScript</div>
+          <div class="skill">React</div>
+          <div class="skill">Bootstrap</div>
+           <div class="skill">Tailwindcss</div>
+           <div class="skill">Vscode</div>
         </div>
-        <div class="box1">
-            <h1>Backend</h1>
-            <ul>
-                <li><i class='bx bxl-python' style='color:#2abc1b'></i>Python</li>
-                <li><i class='bx bxl-django' style='color:#2c1bbc'></i>Django</li>
-                <li>Mysql</li>
-                <li>Github</li>
-            </ul>
-        </div>
+
+        <button class="carousel-btn next">&#10095;</button>
+      </div>
     </div>
+
+    <!-- Backend -->
+    <div class="skills-card">
+      <h3>Backend Development</h3>
+
+      <div class="carousel-container">
+        <button class="carousel-btn prev">&#10094;</button>
+
+        <div class="carousel-track">
+          <div class="skill">Python</div>
+          <div class="skill">Django</div>
+          <div class="skill">Flask</div>
+          <div class="skill">MySQL</div>
+          <div class="skill">SQLite</div>
+          <div class="skill">REST APIs</div>
+          <div class="skill">GitHub</div>
+           <div class="skill">Render</div>
+            <div class="skill">Vercel</div>
+             <div class="skill">Postman</div>
+        </div>
+
+        <button class="carousel-btn next">&#10095;</button>
+      </div>
+    </div>
+
+  </div>
 </section>
+
 
 <section class="experience-projects" id="experience-projects">
     <div class="container">
@@ -626,7 +815,7 @@ nav ul li a:hover::after{
         <div class="experience">
             <h3>Python Full Stack Developer</h3>
             <p><strong>Institute:</strong> Vetri Technology Solutions</p>
-            <p>Training in Python full stack development and internship. Developed web apps with JavaScript and Python, MySQL. Integrated APIs and backend logic. Designed responsive dashboards.</p>
+            <p>Training in Python full stack development <br>and internship. Developed web apps with JavaScript<br> and Python, MySQL. Integrated APIs and backend logic. Designed responsive dashboards.</p>
         </div>
     </div>
 </section>
@@ -693,13 +882,48 @@ nav ul li a:hover::after{
       <a href="https://muppudathiganesh.github.io/employeepayslip/employee%20payslip/index.html" target="_blank">View Project</a>
     </div>
 
+     <div class="project-box">
+      <img src="{% static 'portfolio_app/images/Screenshot (719).png' %}" class="project-image">
+      <h3>Baby Product</h3>
+      <p>Web app using HTML, JavaScript, Python,Django, SQL.</p>
+      <a href="https://baby-website.onrender.com" target="_blank">View Project</a>
+    </div>
+
+     <div class="project-box">
+      <img src="{% static 'portfolio_app/images/Screenshot (727).png' %}" class="project-image">
+      <h3>Bakery</h3>
+      <p>Web app using HTML, JavaScript, Python,Django, SQL.</p>
+      <a href="https://bakery-project-jg2s.onrender.com" target="_blank">View Project</a>
+    </div>
+
+     <div class="project-box">
+      <img src="{% static 'portfolio_app/images/Screenshot 2025-08-30 162812.png' %}" class="project-image">
+      <h3>Stationary</h3>
+      <p>Web app using HTML, JavaScript, Python,Django, SQL.</p>
+      <a href="https://stationary-website-2-lyf2.onrender.com" target="_blank">View Project</a>
+     </div> 
+
+      <div class="project-box">
+      <img src="{% static 'portfolio_app/images/Screenshot 2025-09-06 135415.png' %}" class="project-image">
+      <h3>yoga website</h3>
+      <p>Web app using HTML, JavaScript, Python,Django, Tailwindcss,SQLite.</p>
+      <a href="https://yoga-2.onrender.com" target="_blank">View Project</a>
+    </div>
+
+     <div class="project-box">
+      <img src="{% static 'portfolio_app/images/Screenshot 2025-09-02 151204.png' %}" class="project-image">
+      <h3>Trading</h3>
+      <p>Web app using HTML, JavaScript, Python,Django,Tailwindcss,SQLite.</p>
+      <a href="https://traco-website-2.onrender.com" target="_blank">View Project</a>
+    </div>
+
   </div>
   <div class="seemore"> 
-    <!-- <a href="#" class="see">see more</a> -->
-      <a href="{% static 'portfolio_app/files/Muppudathi_CV.pdf' %}" download class="see">
+    <a href="{% url 'download_cv' %}" class="see">
         Download CV
     </a>
-  </div> 
+</div>
+
 </section>
 
 
@@ -710,9 +934,9 @@ nav ul li a:hover::after{
             <p><i class='bx bx-send' style='color:#d21562'></i> muppuraj11@gmail.com</p>
             <p><i class='bx bx-phone-call' style='color:#d21562'></i> 9325691870</p>
             <div class="social-icons">
-                <a href="#"><i class='bx bxl-facebook-square' style='color:#1719bc'></i></a>
-                <a href="#"><i class='bx bxl-whatsapp-square' style='color:#2dd049'></i></a>
-                <a href="#"><i class='bx bxl-linkedin' style='color:#1532d2'></i></a>
+                <a href="https://www.facebook.com/muppudathiganesh"><i class='bx bxl-facebook-square' style='color:#1719bc'></i></a>
+                <a href="https://wa.me/919325691870"><i class='bx bxl-whatsapp-square' style='color:#2dd049'></i></a>
+                <a href="https://www.linkedin.com/in/muppudathi R/"><i class='bx bxl-linkedin' style='color:#1532d2'></i></a>
             </div>
         </div>
         <div class="contact-right">
@@ -723,12 +947,23 @@ nav ul li a:hover::after{
                 {{ form.as_p }}
                 <button type="submit" class="btn btn2">submit</button>
             </form>
-             {% if success %}
+             <!-- {% if success %}
         <p style="color:green;">Message sent successfully!</p>
-    {% endif %}
+    {% endif %} -->
+    {% if success %}
+<script>
+    // Show popup when message sent successfully
+    alert("✅ Message sent successfully!");
+
+    // Refresh the page after popup closes
+    window.location.href = window.location.pathname;
+</script>
+{% endif %}
         </div>
     </div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 {% endblock %}
  {% block js_css %}
 <script>
@@ -775,6 +1010,41 @@ nav ul li a:hover::after{
     skillIndex = (skillIndex + 1) % skills.length;
     skillElement.textContent = skills[skillIndex];
   }, 2500);
+
+
+
+  document.addEventListener("DOMContentLoaded", function () {
+  const carousels = document.querySelectorAll(".carousel-container");
+
+  carousels.forEach((carousel) => {
+    const track = carousel.querySelector(".carousel-track");
+    const prevBtn = carousel.querySelector(".carousel-btn.prev");
+    const nextBtn = carousel.querySelector(".carousel-btn.next");
+
+    let index = 0;
+
+    function updateCarousel() {
+      const boxWidth = track.querySelector(".skill").offsetWidth + 20; // width + margin
+      track.style.transform = `translateX(${-index * boxWidth}px)`;
+    }
+
+    nextBtn.addEventListener("click", () => {
+      if (index < track.children.length - 2) { // show 2-3 skills at a time
+        index++;
+        updateCarousel();
+      }
+    });
+
+    prevBtn.addEventListener("click", () => {
+      if (index > 0) {
+        index--;
+        updateCarousel();
+      }
+    });
+  });
+});
+
+
     </script>
 {% endblock %}
 

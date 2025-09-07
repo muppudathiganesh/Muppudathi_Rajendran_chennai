@@ -1,0 +1,30 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Django static files
+staticfiles/
+
+# Media uploads (if any)
+media/
+
+# Local environment files
+.env
+
+# VSCode settings (optional)
+.vscode/
+
+# Database files (if any SQLite)
+db.sqlite3
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Image files you don't want in git
+*.png
+*.jpg
+*.jpeg
+
+# Unwanted submodule folder
+R_muppudathi/

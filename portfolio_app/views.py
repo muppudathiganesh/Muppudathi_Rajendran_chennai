@@ -1,9 +1,12 @@
 
 from django.shortcuts import render
-from django.http import HttpResponseRedirect
 from django.core.mail import send_mail
 from django.conf import settings
 from .forms import ContactForm
+import os
+from django.http import FileResponse
+from django.http import FileResponse, Http404
+from django.contrib.staticfiles import finders
 
 def index(request):
     return render(request, 'portfolio_app/index.html')
@@ -33,6 +36,18 @@ def index(request):
 
 
 
+
+# ✅ CV Download View
+# def download_cv(request):
+#     filepath = os.path.join(settings.BASE_DIR, "static/portfolio_app/files/Muppudathi_CV.pdf")
+#     return FileResponse(open(filepath, "rb"), as_attachment=True, filename="Muppudathi_CV.pdf")
+def download_cv(request):
+    filepath = finders.find("portfolio_app/files/Muppudathi_CV.pdf")
+    if not filepath:
+        raise Http404("CV not found.")
+    return FileResponse(open(filepath, "rb"), as_attachment=True, filename="Muppudathi_CV.pdf")
+
+
 def success_page(request):
     name = request.GET.get('name', 'User')
-
+    return render(request, "portfolio_app/success.html", {"name": name})
